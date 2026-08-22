@@ -1,1 +1,79 @@
+// ==============================
+// BOTÃO DE TEMA
+// ==============================
 
+const temaBtn = document.getElementById("temaBtn");
+
+temaBtn.addEventListener("click", function () {
+
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        temaBtn.textContent = "☀️";
+        localStorage.setItem("tema", "escuro");
+    } else {
+        temaBtn.textContent = "🌙";
+        localStorage.setItem("tema", "claro");
+    }
+
+});
+
+
+// ==============================
+// CARREGAR TEMA SALVO
+// ==============================
+
+const temaSalvo = localStorage.getItem("tema");
+
+if (temaSalvo === "escuro") {
+    document.body.classList.add("dark");
+    temaBtn.textContent = "☀️";
+}
+
+
+// ==============================
+// ANIMAÇÃO AO ROLAR A PÁGINA
+// ==============================
+
+const elementos = document.querySelectorAll(
+    ".card, .materia, .comparacao-item"
+);
+
+const observador = new IntersectionObserver(
+    function (entradas) {
+
+        entradas.forEach(function (entrada) {
+
+            if (entrada.isIntersecting) {
+
+                entrada.target.style.opacity = "1";
+                entrada.target.style.transform = "translateY(0)";
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+elementos.forEach(function (elemento) {
+
+    elemento.style.opacity = "0";
+    elemento.style.transform = "translateY(30px)";
+    elemento.style.transition = "opacity 0.7s ease, transform 0.7s ease";
+
+    observador.observe(elemento);
+
+});
+
+
+// ==============================
+// ANO AUTOMÁTICO NO CONSOLE
+// ==============================
+
+console.log("Blog EduSuíça carregado com sucesso!");
+console.log("Projeto de Robótica");
