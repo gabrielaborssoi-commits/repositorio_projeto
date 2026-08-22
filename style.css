@@ -1,1 +1,678 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #f7f5f1;
+    color: #222;
+    transition: 0.3s;
+}
+
+.container {
+    width: min(1150px, 90%);
+    margin: auto;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+
+/* ==============================
+   CABEÇALHO
+============================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eeeeee;
+}
+
+.nav-container {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo > span {
+    font-size: 30px;
+}
+
+.logo strong {
+    display: block;
+    font-size: 20px;
+}
+
+.logo small {
+    color: #888;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e31b23;
+}
+
+.tema-btn {
+    border: none;
+    background: #f1f1f1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+    min-height: 650px;
+    position: relative;
+
+    background:
+        url("https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.80),
+            rgba(0, 0, 0, 0.30)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    max-width: 700px;
+}
+
+.tag,
+.mini-titulo {
+    display: inline-block;
+    color: #e31b23;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero .tag {
+    color: white;
+    border-left: 3px solid #e31b23;
+    padding-left: 10px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(55px, 8vw, 92px);
+    line-height: 0.98;
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    color: #e31b23;
+}
+
+.hero p {
+    max-width: 600px;
+    line-height: 1.8;
+    color: #eeeeee;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 27px;
+    color: white;
+    background: #e31b23;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #b80f16;
+    transform: translateY(-3px);
+}
+
+
+/* ==============================
+   INTRODUÇÃO
+============================== */
+
+.introducao {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    padding: 110px 0;
+    align-items: center;
+}
+
+.intro-text h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+    line-height: 1.1;
+    margin: 15px 0 25px;
+}
+
+.intro-text h2 span,
+.conclusao h2 span,
+.robotica-texto h2 span {
+    color: #e31b23;
+}
+
+.intro-text p {
+    color: #666;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+.intro-card {
+    padding: 40px;
+    background: #fff;
+    border-top: 5px solid #e31b23;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+.numero {
+    font-family: "Playfair Display", serif;
+    color: #ddd;
+    font-size: 50px;
+}
+
+.intro-card h3 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.intro-card p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+
+/* ==============================
+   SEÇÕES
+============================== */
+
+.secao {
+    padding: 100px 0;
+}
+
+.escolas {
+    background: #efede8;
+}
+
+.titulo-secao {
+    max-width: 700px;
+    margin-bottom: 55px;
+}
+
+.titulo-secao h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+    margin: 12px 0 15px;
+}
+
+.titulo-secao p {
+    color: #777;
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   CARDS
+============================== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-imagem {
+    height: 230px;
+    overflow: hidden;
+}
+
+.card-imagem img {
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card:hover img {
+    transform: scale(1.06);
+}
+
+.card-conteudo {
+    padding: 30px;
+}
+
+.card-numero {
+    color: #e31b23;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.card p {
+    color: #777;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+
+/* ==============================
+   MATÉRIAS
+============================== */
+
+.materias {
+    background: #171717;
+    color: white;
+}
+
+.materias .titulo-secao p {
+    color: #aaa;
+}
+
+.materias-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+}
+
+.materia {
+    min-height: 230px;
+    padding: 35px;
+    background: #222;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.materia:hover {
+    background: #e31b23;
+    transform: translateY(-5px);
+}
+
+.icone {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.materia h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.materia p {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.materia:hover p {
+    color: white;
+}
+
+
+/* ==============================
+   ROBÓTICA
+============================== */
+
+.robotica {
+    padding: 110px 0;
+    background: #fff;
+}
+
+.robotica-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.robotica-imagem {
+    position: relative;
+}
+
+.robotica-imagem img {
+    height: 550px;
+    object-fit: cover;
+}
+
+.imagem-legenda {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    background: #e31b23;
+    color: white;
+    padding: 12px 18px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.robotica-texto h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 50px;
+    line-height: 1.1;
+    margin: 15px 0 25px;
+}
+
+.robotica-texto > p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.destaque {
+    background: #f4f2ee;
+    border-left: 4px solid #e31b23;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.destaque strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.destaque p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ==============================
+   COMPARAÇÃO
+============================== */
+
+.comparacao {
+    background: #f0eee9;
+}
+
+.comparacao-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.comparacao-item {
+    border-top: 1px solid #bbb;
+    padding-top: 25px;
+}
+
+.comparacao-item span {
+    color: #e31b23;
+    font-weight: 800;
+}
+
+.comparacao-item h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.comparacao-item p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+
+/* ==============================
+   CONCLUSÃO
+============================== */
+
+.conclusao {
+    background: #e31b23;
+    color: white;
+    padding: 110px 0;
+    text-align: center;
+}
+
+.conclusao .mini-titulo {
+    color: white;
+}
+
+.conclusao h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 6vw, 65px);
+    max-width: 800px;
+    margin: 20px auto 30px;
+}
+
+.conclusao h2 span {
+    color: #171717;
+}
+
+.conclusao p {
+    max-width: 750px;
+    margin: 0 auto 15px;
+    line-height: 1.8;
+    color: #ffe5e5;
+}
+
+.assinatura {
+    margin-top: 40px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+footer {
+    background: #111;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer strong {
+    font-size: 20px;
+}
+
+footer p {
+    color: #777;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+/* ==============================
+   MODO ESCURO
+============================== */
+
+body.dark {
+    background: #121212;
+    color: #eee;
+}
+
+body.dark .header {
+    background: rgba(20, 20, 20, 0.95);
+    border-color: #333;
+}
+
+body.dark nav a {
+    color: #eee;
+}
+
+body.dark .intro-card {
+    background: #222;
+}
+
+body.dark .intro-text p,
+body.dark .intro-card p,
+body.dark .titulo-secao p {
+    color: #bbb;
+}
+
+body.dark .escolas {
+    background: #181818;
+}
+
+body.dark .card {
+    background: #242424;
+}
+
+body.dark .card p {
+    color: #bbb;
+}
+
+body.dark .robotica {
+    background: #151515;
+}
+
+body.dark .robotica-texto > p,
+body.dark .destaque p {
+    color: #bbb;
+}
+
+body.dark .destaque {
+    background: #222;
+}
+
+body.dark .comparacao {
+    background: #1d1d1d;
+}
+
+body.dark .comparacao-item p {
+    color: #bbb;
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 850px) {
+
+    nav {
+        display: none;
+    }
+
+    .introducao,
+    .robotica-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .cards,
+    .materias-grid,
+    .comparacao-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero {
+        min-height: 580px;
+    }
+
+    .robotica-imagem img {
+        height: 400px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .titulo-secao h2,
+    .intro-text h2 {
+        font-size: 36px;
+    }
+
+    .cards,
+    .materias-grid,
+    .comparacao-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+}
